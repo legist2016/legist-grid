@@ -1,0 +1,39 @@
+<div class="left-right-split fullscreen">
+	<div class="left" style="width:50%;">
+		<div class="up-down-split">
+			<div class="up">
+				<p>年度<select [(ngModel)]="nd" (change)="selectNd()">
+          <option value='' selected=selected>选择</option>
+          <option *ngFor="let nd of ajnd | async" [value]="nd.nd">{{nd.nd}}</option>
+          </select>
+          分类号<select [(ngModel)]='flh' (change)="selectFlh()">
+            <option value=''>选择</option>
+            <option *ngFor="let flh of ajflh | async" [value]="flh.flh">{{flh.flh}}</option>
+            </select></p>
+				案卷：
+			</div>
+			<div class="up" style="height:40%;">
+				<ag-grid-angular class="ag-theme-balham fullscreen" [rowData]="ajRowData | async"
+					[columnDefs]="ajColumnDefs" (selectionChanged)="ajSelectionChanged($event)" rowSelection="single">
+				</ag-grid-angular>
+			</div>
+			<div>卷内：</div>
+			<div class="down">
+				<ag-grid-angular class="ag-theme-balham fullscreen" [rowData]="wjRowData | async"
+					[columnDefs]="wjColumnDefs" (selectionChanged)="wjSelectionChanged($event)" rowSelection="single">
+				</ag-grid-angular>
+
+			</div>
+		</div>
+	</div>
+	<div class="right">
+		<div class="up-down-split">
+      <div class="up">
+        <a *ngFor="let link of links | async" (click)="open(link)">{{link.fname}}</a>
+        </div>
+      <div class="down">
+        <iframe class="fullscreen"></iframe>
+      </div>
+    </div>
+	</div>
+</div>

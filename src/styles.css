@@ -1,0 +1,45 @@
+/* Add application styles & imports to this file! */
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+
+body, html{
+  margin: 0;
+  width:100%;
+  height: 100%;
+  }
+
+my-app, .fullscreen{
+  width:100%;
+  height: 100%;
+}
+
+div.left-right-split{
+  display: flex;
+  flex-flow:row;
+  width:100%;
+  height: 100%;
+}
+  div.left-right-split>div.left{
+    height: 100%;
+  }
+  div.left-right-split>div.right{
+    flex:1;
+    height: 100%;
+  }
+
+div.up-down-split{
+  display: flex;
+  flex-flow:column;
+  width:100%;
+  height: 100%;
+}
+  div.up-down-split>div.up{
+    width: 100%;
+  }
+  div.up-down-split>div.down{
+    flex:1;
+    width: 100%;
+  }  
+iframe{
+  border:none;
+}
