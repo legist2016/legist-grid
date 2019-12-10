@@ -6,10 +6,11 @@ import { AppComponent } from "./app.component";
 import { AgGridModule } from "ag-grid-angular";
 import { DataService } from './data.service';
 import { HttpClientModule } from "@angular/common/http";
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   imports: [BrowserModule, FormsModule,HttpClientModule, AgGridModule.withComponents([])],
-  declarations: [AppComponent],
+  declarations: [AppComponent, SafePipe],
   bootstrap: [AppComponent],
   providers: [DataService]
 })

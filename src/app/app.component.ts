@@ -26,6 +26,7 @@ export class AppComponent {
   ajflh;
   nd='';
   flh='';
+  filepath='about:blank'
   constructor(private ds: DataService) {
     this.ajnd = ds.getNd();
   }
@@ -67,5 +68,6 @@ export class AppComponent {
   }
   open(link){
     console.log(link)
+    this.filepath = `https://stackblitz.com/files/legist-grid/github/legist2016/legist-grid/master/src/assets/${link.fpath}`
   }
 }

@@ -1,5 +1,5 @@
 <div class="left-right-split fullscreen">
-	<div class="left" style="width:50%;">
+	<div class="left" style="width:40%;">
 		<div class="up-down-split">
 			<div class="up">
 				<p>年度<select [(ngModel)]="nd" (change)="selectNd()">
@@ -29,10 +29,10 @@
 	<div class="right">
 		<div class="up-down-split">
       <div class="up">
-        <a *ngFor="let link of links | async" (click)="open(link)">{{link.fname}}</a>
+        <a *ngFor="let link of links | async" (click)="open(link)" class="file">{{link.fname}}</a>
         </div>
       <div class="down">
-        <iframe class="fullscreen"></iframe>
+        <iframe class="fullscreen" [src]='filepath | safe'></iframe>
       </div>
     </div>
 	</div>
